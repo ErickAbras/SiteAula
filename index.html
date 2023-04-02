@@ -4,17 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Day-Tech</title>
-    <!-- <link
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
-      crossorigin="anonymous" -->
-    <!-- /> -->
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <header class="row header">
+    <header class="wrapper header">
       <img class="logosite" src="./logo site.svg" alt="" />
       <div class="search">
         <p class="service_textting">Bem vindo, Abras</p>
@@ -30,7 +30,7 @@
       </div>
 
       <div class="actions_buy">
-        <div class="row links">
+        <div class="wrapper links">
           <a class="link" href="#">Entrar</a>
           <a class="link" href="#">Registrar</a>
           <a class="link" href="#">Minha conta</a>
@@ -41,7 +41,7 @@
             >Rastrear pedido</a
           >
         </div>
-        <div class="row service">
+        <div class="wrapper service">
           <div class="service_texts">
             <p class="service_text">Cash on Delivery | 30 Day Return</p>
             <p class="service_text">
@@ -59,7 +59,7 @@
     </header>
 
     <main>
-      <div class="row">
+      <div class="wrapper">
         <div class="quickfind">
           <p class="textfind">Pesquisa rapida - Escolha seu produto</p>
           <p class="texfindbehind">Ache o seu produto com o preço certo</p>
@@ -81,7 +81,7 @@
             <option value="notebook">Work Station</option>
             <option value="hardware">Perifericos</option>
           </select>
-          <div class="row">
+          <div class="wrapper">
             <label for="from">$</label>
             <input name="from" type="text" placeholder="From" />
             <label for="to">$</label>
@@ -89,78 +89,66 @@
           </div>
           <button>Search</button>
         </div>
-
-        <div class="carousel">
-          <button class="carousel-control-prev" type="button" onclick="prev()">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <img class="arrow" src="/arrow.png" alt="" />
-          </button>
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
           <div class="carousel-inner">
-            <div class="carousel-item">
-              <img src="/img01.png" class="carousel-image" alt="" />
-            </div>
             <div class="carousel-item active">
-              <img src="/img02.png" class="carousel-image" alt="" />
+              <img src="./img01.png" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="/img03.png" class="carousel-image" alt="" />
+              <img src="./img02.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="./img03.png" class="d-block w-100" alt="..." />
             </div>
           </div>
-          <button class="carousel-control-next" type="button" onclick="next()">
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <img class="arrow" src="/arrow.png" alt="" />
+            <span class="visually-hidden">Next</span>
           </button>
         </div>
       </div>
     </main>
 
-    <script>
-      const carouselbuttonprev = document.querySelector(
-        ".carousel-control-prev"
-      );
-      const carouselbuttonnext = document.querySelector(
-        ".carousel-control-next"
-      );
-      const carouselItens = Array.from(
-        document.querySelectorAll(".carousel-item")
-      );
-      const carouseloItensactive = document.querySelector(
-        ".carousel-item.active"
-      );
-
-      function prev() {
-        const activeIndex = carouselItens.findIndex(
-          (prevbutton) => prevbutton == carouseloItensactive
-        );
-        carouselItens[activeIndex].classList.remove(".active");
-        const index =
-          activeIndex === 0 ? carouselItens.length - 1 : activeIndex - 1;
-
-        carouselItens[index].classList.add(".active");
-        document.querySelector(
-          ".carousel-inner"
-        ).style.transform = `translateX(-${index * 100}%)`;
-      }
-      function next() {
-        const activeIndex = carouselItens.findIndex(
-          (prevbutton) => prevbutton == carouseloItensactive
-        );
-
-        carouselItens[activeIndex].classList.remove(".active");
-
-        const index =
-          activeIndex === carouselItens.length - 1 ? 0 : activeIndex + 1;
-        carouselItens[index].classList.add(".active");
-        document.querySelector(
-          ".carousel-inner"
-        ).style.transform = `translateX(-${index * 100}%)`;
-      }
-    </script>
-
-    <!-- <script
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" 
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
   </body>
 </html>

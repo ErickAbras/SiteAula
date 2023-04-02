@@ -13,7 +13,7 @@ body {
   height: 150px;
 }
 
-.row {
+.wrapper {
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -32,57 +32,6 @@ body {
   width: 80px;
   height: 90px;
   cursor: pointer;
-}
-
-.carousel {
-  width: var(--carousel-image);
-  position: relative;
-  max-width: var(--carousel-image);
-  overflow-x: hidden;
-}
-
-.carousel-inner {
-  width: 100%;
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-image {
-  width: var(--carousel-image);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 15px;
-  background-color: white;
-  border: 0;
-  cursor: pointer;
-  border-radius: 10%;
-  padding: 5px;
-  z-index: 10;
-}
-
-.carousel-control-prev {
-  left: 0;
-}
-
-.carousel-control-next {
-  right: 0;
-}
-.carousel-control-prev .arrow,
-.carousel-control-next .arrow {
-  width: 30px;
-}
-
-.carousel-control-prev .arrow {
-  transform: rotate(180deg);
-}
-
-.active {
-  z-index: 5;
 }
 
 .quickfind select {
