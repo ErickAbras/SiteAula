@@ -1,0 +1,91 @@
+:root {
+  --carousel-image: 1000px;
+}
+body {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "arial";
+}
+
+.logosite {
+  width: 150px;
+  height: 150px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.search_button {
+  cursor: pointer;
+}
+
+.service_button_logo {
+  width: 30px;
+  height: 30px;
+}
+
+.service_button {
+  width: 80px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.carousel {
+  width: var(--carousel-image);
+  position: relative;
+  max-width: var(--carousel-image);
+  overflow-x: hidden;
+}
+
+.carousel-inner {
+  width: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  width: var(--carousel-image);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 15px;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10%;
+  padding: 5px;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+.carousel-control-prev .arrow,
+.carousel-control-next .arrow {
+  width: 30px;
+}
+
+.carousel-control-prev .arrow {
+  transform: rotate(180deg);
+}
+
+.active {
+  z-index: 5;
+}
+
+.quickfind select {
+  display: block;
+  width: 100%;
+}

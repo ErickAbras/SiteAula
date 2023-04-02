@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Day-Tech</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous" -->
+    <!-- /> -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="row header">
+      <img class="logosite" src="./logo site.svg" alt="" />
+      <div class="search">
+        <p class="service_textting">Bem vindo, Abras</p>
+        <div class="search_bar">
+          <input
+            type="text"
+            name="search"
+            id="search_input"
+            placeholder="Busque aqui pelo seu produto"
+          />
+          <button>Search</button>
+        </div>
+      </div>
+
+      <div class="actions_buy">
+        <div class="row links">
+          <a class="link" href="#">Entrar</a>
+          <a class="link" href="#">Registrar</a>
+          <a class="link" href="#">Minha conta</a>
+          <a
+            class="link"
+            href="https://rastreamento.correios.com.br/app/index.php"
+            target="_blank"
+            >Rastrear pedido</a
+          >
+        </div>
+        <div class="row service">
+          <div class="service_texts">
+            <p class="service_text">Cash on Delivery | 30 Day Return</p>
+            <p class="service_text">
+              24/7 Customer Service
+              <span class="service_text_highlight">4002-8922</span>
+            </p>
+          </div>
+          <button class="service_button">
+            <div class="service_button_badge">0</div>
+            <img class="service_button_logo" src="./shopping-cart.png" alt="" />
+            <p class="service_button_text">MY CART</p>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="row">
+        <div class="quickfind">
+          <p class="textfind">Pesquisa rapida - Escolha seu produto</p>
+          <p class="texfindbehind">Ache o seu produto com o preço certo</p>
+          <select name="Tipo" id="">
+            <option value="" disabled selected>Tipo de produto</option>
+            <option value="computador">Computador Gamer</option>
+            <option value="notebook">Notebook Gamer</option>
+            <option value="hardware">Hardware</option>
+          </select>
+          <select name="marca" id="">
+            <option value="" disabled selected>Marcas</option>
+            <option value="As">Asus</option>
+            <option value="Int">Intel</option>
+            <option value="Ry">Ryzen</option>
+          </select>
+          <select name="Tipo" id="">
+            <option value="" disabled selected>Categoria</option>
+            <option value="computador">Pc Gamer</option>
+            <option value="notebook">Work Station</option>
+            <option value="hardware">Perifericos</option>
+          </select>
+          <div class="row">
+            <label for="from">$</label>
+            <input name="from" type="text" placeholder="From" />
+            <label for="to">$</label>
+            <input name="To" type="text" placeholder="To" />
+          </div>
+          <button></button>
+        </div>
+
+        <div class="carousel">
+          <button class="carousel-control-prev" type="button" onclick="prev()">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <img class="arrow" src="/arrow.png" alt="" />
+          </button>
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="/img01.png" class="carousel-image" alt="" />
+            </div>
+            <div class="carousel-item active">
+              <img src="/img02.png" class="carousel-image" alt="" />
+            </div>
+            <div class="carousel-item">
+              <img src="/img03.png" class="carousel-image" alt="" />
+            </div>
+          </div>
+          <button class="carousel-control-next" type="button" onclick="next()">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <img class="arrow" src="/arrow.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const carouselbuttonprev = document.querySelector(
+        ".carousel-control-prev"
+      );
+      const carouselbuttonnext = document.querySelector(
+        ".carousel-control-next"
+      );
+      const carouselItens = Array.from(
+        document.querySelectorAll(".carousel-item")
+      );
+      const carouseloItensactive = document.querySelector(
+        ".carousel-item.active"
+      );
+
+      function prev() {
+        const activeIndex = carouselItens.findIndex(
+          (prevbutton) => prevbutton == carouseloItensactive
+        );
+        carouselItens[activeIndex].classList.remove(".active");
+        const index =
+          activeIndex === 0 ? carouselItens.length - 1 : activeIndex - 1;
+
+        carouselItens[index].classList.add(".active");
+        document.querySelector(
+          ".carousel-inner"
+        ).style.transform = `translateX(-${index * 100}%)`;
+      }
+      function next() {
+        const activeIndex = carouselItens.findIndex(
+          (prevbutton) => prevbutton == carouseloItensactive
+        );
+
+        carouselItens[activeIndex].classList.remove(".active");
+
+        const index =
+          activeIndex === carouselItens.length - 1 ? 0 : activeIndex + 1;
+        carouselItens[index].classList.add(".active");
+        document.querySelector(
+          ".carousel-inner"
+        ).style.transform = `translateX(-${index * 100}%)`;
+      }
+    </script>
+
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" 
+      crossorigin="anonymous"
+    ></script> -->
+  </body>
+</html>
