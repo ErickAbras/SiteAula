@@ -1,40 +1,161 @@
-:root {
-  --carousel-image: 1000px;
-}
 body {
   width: 95%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   font-family: "arial";
+  background-color: bisque;
 }
 
 .logosite {
-  width: 150px;
-  height: 150px;
+  width: 159px;
+  height: 159px;
+}
+
+#search_input {
+  height: 35px;
+  width: 500px;
 }
 
 .wrapper {
   display: flex;
-  gap: 10px;
   justify-content: space-between;
+  margin: 15px 0;
+}
+
+.service_texts {
+  font-weight: 700;
+  color: #2f2f2f;
+}
+
+.service_textting {
+  font-weight: 700;
+  color: #2f2f2f;
 }
 
 .search_button {
   cursor: pointer;
 }
 
+.button_search {
+  background-color: #525252;
+}
+
 .service_button_logo {
   width: 30px;
-  height: 30px;
+  height: 25px;
+  margin: 5px;
 }
 
 .service_button {
   width: 80px;
-  height: 90px;
+  height: 60px;
   cursor: pointer;
+  position: relative;
+  margin: 0 15px;
+  background-color: #525252;
+}
+
+.service_button_badge {
+  position: absolute;
+  background-color: #808080;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  line-height: 1.1;
+  padding: 4px;
+  border-radius: 100px;
+  height: 26px;
+  width: 26px;
+  top: -12px;
+  right: -10px;
+}
+
+.service_button_text {
+  font-size: 12px;
+  color: white;
+  font-weight: 700;
+}
+
+.textfind,
+.texfindbehind {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-variant: small-caps;
+}
+
+.buttonquickfind {
+  height: 35px;
+  width: 350px;
+  margin: 20px 0;
+  background-color: #2f2f2f;
+  color: white;
+}
+.quickfind {
+  border-color: #2f2f2f;
+  border-width: 3px;
+  border-style: solid;
+  margin: 0 15px 0 0;
+  padding: 15px;
+  background-color: #f2f2f2;
 }
 
 .quickfind select {
   display: block;
   width: 100%;
+  padding: 3px;
+  margin: 0 0 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.carousel-inner {
+  height: 400px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 10px;
+}
+
+.product-containter {
+  width: 100%;
+  text-align: center;
+  border-color: #2f2f2f;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.product-containter a {
+  display: block;
+}
+
+.search_button_logo {
+  width: 15px;
+}
+
+.button_search {
+  height: 35px;
+  width: 90px;
+}
+
+.search_button_text {
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
+
+.imput-from,
+.imput-to {
+  height: 30px;
+  width: 150px;
+  margin: 10px;
+}
+
+.label-from,
+.label-to {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 10px;
 }
